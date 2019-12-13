@@ -14,6 +14,15 @@
         .bigbeg {
             font-size: 4.714286rem !important;
         }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: black;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -27,39 +36,35 @@
                 <h2><i class="male icon"></i></h2>
                 <h3>Bot</h3>
             </a></h1>
-        <h1 id="result">Rock covers paper.</h1>
+        <h1 id="result">Hi! Press your hand of choice to start playing.</h1>
     </div>
-    <div class="ui three column stackable grid mt-5">
-        <div class="column">
-            <div id="rock" class="ui center aligned icon header">
-                <div onclick="rock()" class="massive ui vertical animated button bigbeg" tabindex="0">
-                    <div class="hidden content">ROCK</div>
-                    <div class="visible content">
-                        <i class="em em-facepunch" aria-role="presentation" aria-label="FISTED HAND SIGN"></i>
-                    </div>
+    <div class="ui center aligned grid mt-5">
+        <div class="ui buttons">
+            <div onclick="rock()" class="massive ui vertical animated button bigbeg" tabindex="0">
+                <div class="hidden content">ROCK</div>
+                <div class="visible content">
+                    <i class="em em-facepunch" aria-role="presentation" aria-label="FISTED HAND SIGN"></i>
+                </div>
+            </div>
+            <div class="or"></div>
+            <div onclick="paper()" id="paper" class="massive ui vertical animated button bigbeg" tabindex="0">
+                <div class="hidden content">PAPER</div>
+                <div class="visible content">
+                    <i class="em em-hand" aria-role="presentation" aria-label="RAISED HAND"></i>
+                </div>
+            </div>
+            <div class="or"></div>
+            <div onclick="scissors()" id="scissors" class="massive ui vertical animated button bigbeg" tabindex="0">
+                <div class="hidden content">SCISSORS</div>
+                <div class="visible content">
+                    <i class="em em-v" aria-role="presentation" aria-label="VICTORY HAND"></i>
                 </div>
             </div>
         </div>
-        <div class="column">
-            <div class="ui center aligned icon header">
-                <div onclick="paper()" id="paper" class="massive ui vertical animated button bigbeg" tabindex="0">
-                    <div class="hidden content">PAPER</div>
-                    <div class="visible content">
-                        <i class="em em-hand" aria-role="presentation" aria-label="RAISED HAND"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="ui center aligned icon header">
-                <div onclick="scissors()" id="scissors" class="massive ui vertical animated button bigbeg" tabindex="0">
-                    <div class="hidden content">SCISSORS</div>
-                    <div class="visible content">
-                        <i class="em em-v" aria-role="presentation" aria-label="VICTORY HAND"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="footer">
+        <hr>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -72,25 +77,32 @@
         let botchoice;
         var botsco = 0;
         var playersco = 0;
+
         function scissors() {
             botchoice = Math.floor(Math.random() * 3);
             switch (botchoice) {
                 case 0:
                     botsco++;
                     botscore.innerHTML = botsco;
-                    result.innerHTML = ("<i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>"
+                    );
                     break;
                 case 1:
                     playersco++;
                     playerscore.innerHTML = playersco;
-                    result.innerHTML = ("<i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i>"
+                    );
                     break;
                 case 2:
                     playersco++;
                     botsco++;
                     playerscore.innerHTML = playersco;
                     botscore.innerHTML = botsco;
-                    result.innerHTML = ("<i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>"
+                    );
                     break;
                 default:
 
@@ -103,19 +115,25 @@
                 case 0:
                     botsco++;
                     botscore.innerHTML = botsco;
-                    result.innerHTML = ("<i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i> VS <i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i> VS <i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>"
+                    );
                     break;
                 case 1:
                     playersco++;
                     botsco++;
                     playerscore.innerHTML = playersco;
                     botscore.innerHTML = botsco;
-                    result.innerHTML = ("<i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i> VS <i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i> VS <i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i>"
+                    );
                     break;
                 case 2:
                     botsco++;
                     botscore.innerHTML = botsco;
-                    result.innerHTML = ("<i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i> VS <i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i> VS <i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>"
+                    );
                     break;
                 default:
                     // code block
@@ -130,17 +148,23 @@
                     botsco++;
                     playerscore.innerHTML = playersco;
                     botscore.innerHTML = botsco;
-                    result.innerHTML = ("<i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>"
+                    );
                     break;
                 case 1:
                     botsco++;
                     botscore.innerHTML = botsco;
-                    result.innerHTML = ("<i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i>"
+                    );
                     break;
                 case 2:
                     playersco++;
                     playerscore.innerHTML = playersco;
-                    result.innerHTML = ("<i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>");
+                    result.innerHTML = (
+                        "<i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i> VS <i class='em em-v' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>"
+                    );
                     break;
                 default:
                     // code block
