@@ -112,8 +112,8 @@
             botchoice = Math.floor(Math.random() * 3);
             switch (botchoice) {
                 case 0:
-                    botsco++;
-                    botscore.innerHTML = botsco;
+                    playersco++;
+                    playerscore.innerHTML = playersco;
                     result.innerHTML = (
                         "<i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i> VS <i class='em em-facepunch' aria-role='presentation' aria-label='FISTED HAND SIGN'></i>"
                     );
@@ -121,6 +121,8 @@
                 case 1:
                     playersco++;
                     playerscore.innerHTML = playersco;
+                    botsco++;
+                    botscore.innerHTML = botsco;
                     result.innerHTML = (
                         "<i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i> VS <i class='em em-hand' aria-role='presentation' aria-label='RAISED HAND'></i>"
                     );
